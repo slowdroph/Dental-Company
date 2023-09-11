@@ -352,6 +352,25 @@
     overflow: visible;
 }
 
+.slider-btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition:all .4s;
+    background-color: white;
+}
+
+.slider-btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
 .button-arrow-left {
     left: 15%;
     transform: translate(-50%, -50%);
