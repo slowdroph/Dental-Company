@@ -1,0 +1,389 @@
+@import url("https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap");
+:root {
+    --PrimaryColor: #6db8ee;
+    --SecondaryColor: #2698eb;
+    --AlternativeColor: #1d77b8;
+    --BackColor: rgba(0, 217, 255, 0.705);
+
+    --fontSintony: "Sintony";
+    --fontHeebo: "Heebo";
+}
+@font-face {
+    font-family: Heebo;
+    src: url(fonts/Heebo-VariableFont_wght.ttf);
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.path {
+    height: 100px;
+    display: block;
+    background-color: var(--AlternativeColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.path i {
+    color: white;
+    font-size: 36px;
+}
+
+/* header */
+
+.navbar {
+    background-color: var(--AlternativeColor);
+    padding: 30px 0px;
+}
+
+.menu-list {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    gap: 40px;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: white;
+    font-family: var(--fontHeebo);
+    text-transform: uppercase;
+}
+
+.menu-list :hover {
+    transition: 500ms ease-in;
+    transition-delay: 0.1s;
+    transition-duration: 0.5s;
+    animation-name: MenuAnim;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 20px;
+}
+
+@keyframes MenuAnim {
+    0% {
+        background-color: #ebeff3ee;
+    }
+    100% {
+        background-color: #1d77b8;
+    }
+}
+
+.img-container {
+    width: 90%;
+    height: 95vh;
+    margin: 0 auto;
+    padding: 32px;
+    background-image: url(imagens/clinic-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    background-color: rgba(0, 0, 0, 0.507);
+    background-blend-mode: darken;
+    opacity: 0.8;
+}
+
+.title-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: var(--fontHeebo);
+    color: white;
+}
+
+.sub-título:nth-child(1) {
+    font-size: 2.4em;
+    display: block;
+    animation-name: título-anim;
+    animation-duration: 6s;
+}
+
+.sub-título:nth-child(2) {
+    animation-name: título-anim;
+    animation-duration: 6s;
+    display: block;
+}
+
+@keyframes título-anim {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    50% {
+        transform: translateX(100px);
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+/* seção apresentação */
+
+.seção-apresentação {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.seção-apresentação h2 {
+    font-family: var(--fontHeebo);
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.seção-apresentação p {
+    font-size: 20px;
+    font-family: var(--fontSintony);
+    margin-top: 30px;
+}
+
+.seção-apresentação button {
+    background-color: var(--AlternativeColor);
+    color: white;
+    border: none;
+    font-family: var(--fontSintony);
+    font-size: 17px;
+    padding: 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.seção-apresentação button:hover {
+    opacity: 0.7;
+    transition-duration: 0.8s;
+}
+
+/* seção serviços */
+
+.seção-serviços {
+    min-height: fit-content;
+    margin-top: 5em;
+}
+
+.seção-serviços h2 {
+    font-family: var(--fontHeebo);
+    font-size: 2.2em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.serviços-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.serviço-card {
+    width: 400px;
+    background-color: var(--AlternativeColor);
+    overflow: hidden;
+}
+
+.serviço-card:hover {
+    opacity: 0.8;
+}
+
+.serviço-card:hover img {
+    transform: scale(1.1);
+    transition: 500ms ease-in;
+}
+
+.serviço-card:hover h3 {
+    text-decoration-color: white;
+    text-decoration-thickness: 3px;
+    text-decoration-line: underline;
+}
+
+.serviço-card img {
+    max-width: 100%;
+}
+
+.card-des {
+    padding: 20px;
+}
+
+.card-des h3 a {
+    color: white;
+    text-decoration: none;
+    font-family: var(--fontHeebo);
+    font-size: 24px;
+}
+
+.card-des p {
+    margin-top: 20px;
+    font-family: var(--fontSintony);
+    font-size: 17px;
+    color: bisque;
+}
+
+/* seção especialistas */
+
+.seção-especialistas {
+    margin-top: 5em;
+    min-height: fit-content;
+    position: relative;
+}
+
+.seção-especialistas h2 {
+    font-family: var(--fontHeebo);
+    font-size: 2.2em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.especialista-container {
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 60px; */
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.especialista-container .path {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    z-index: -1;
+    transform: translateY(50%);
+}
+
+.esp-card {
+    background-color: rgb(243, 227, 227);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    text-align: center;
+    gap: 12px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.esp-card img {
+    clip-path: circle();
+    width: 207px;
+    height: 207px;
+}
+
+.esp-card h3 {
+    font-family: var(--fontHeebo);
+    text-transform: uppercase;
+}
+
+.esp-desc {
+    font-family: var(--fontHeebo);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.esp-content {
+    font-family: var(--fontSintony);
+}
+
+/* clínica */
+
+.seção-clínica {
+    min-height: 1000px;
+    margin-top: 5em;
+    background-color: var(--AlternativeColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.seção-clínica h2 {
+    color: white;
+    text-decoration: none;
+    font-family: var(--fontHeebo);
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2.3px;
+    margin-bottom: 8px;
+}
+
+.carousel {
+    width: 1123px;
+    height: 750px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 2s;
+}
+
+.slider-btn {
+    position: absolute;
+    z-index: 10;
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    font-family: inherit;
+    color: #333;
+    border-radius: 50%;
+    height: 5.5rem;
+    width: 5.5rem;
+    font-size: 3.25rem;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.button-arrow-left {
+    left: 15%;
+    transform: translate(-50%, -50%);
+}
+
+.button-arrow-right {
+    right: 15%;
+    transform: translate(50%, -50%);
+}
+
+/* seção onde estamos? */
+
+.localization-section {
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.localization-section h2 {
+    font-family: var(--fontHeebo);
+    font-size: 2.2em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+}
+
+.path:nth-last-child(3) {
+    text-align: center;
+    color: white;
+    font-size: 17.5px;
+}
