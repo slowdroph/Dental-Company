@@ -45,7 +45,7 @@ const init = function () {
 };
 init();
 
-const Temporizador = setInterval(function(){
+const Timer = setInterval(function(){
     nextSlide()
 },8000)
 

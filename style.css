@@ -53,27 +53,15 @@
     color: white;
     font-family: var(--fontHeebo);
     text-transform: uppercase;
+    padding: 10px 20px 10px 20px;
 }
 
-.menu-list :hover {
-    transition: 500ms ease-in;
-    transition-delay: 0.1s;
-    transition-duration: 0.5s;
-    animation-name: MenuAnim;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in-out;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-size: 20px;
-}
-
-@keyframes MenuAnim {
-    0% {
-        background-color: #ebeff3ee;
-    }
-    100% {
-        background-color: #1d77b8;
-    }
+.menu-list a:hover {
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    
+    color: var(--SecondaryColor);
+    font-weight: 600;
 }
 
 .img-container {
@@ -352,7 +340,7 @@
     overflow: visible;
 }
 
-.slider-btn::after{
+.slider-btn::after {
     content: "";
     display: inline-block;
     height: 100%;
@@ -362,7 +350,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    transition:all .4s;
+    transition: all 0.4s;
     background-color: white;
 }
 
