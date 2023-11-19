@@ -4,19 +4,33 @@
     --SecondaryColor: #2698eb;
     --AlternativeColor: #1d77b8;
     --BackColor: rgba(0, 217, 255, 0.705);
-
     --fontSintony: "Sintony";
     --fontHeebo: "Heebo";
 }
+
 @font-face {
     font-family: Heebo;
     src: url(fonts/Heebo-VariableFont_wght.ttf);
 }
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
+
+/* ↓↓↓↓ reusable classes  ↓↓↓↓ */
+
+.hidden {
+    opacity: 0;
+    transform: translateY(8rem);
+}
+
+.section {
+    transition: 2.2s;
+}
+
+/* ↑↑↑↑ reusable classes  ↑↑↑↑ */
 
 .path {
     height: 100px;
@@ -45,7 +59,7 @@
     flex-direction: row;
     justify-content: center;
     list-style-type: none;
-    gap: 40px;
+    gap: 60px;
 }
 
 .menu-list a {
@@ -53,26 +67,27 @@
     color: white;
     font-family: var(--fontHeebo);
     text-transform: uppercase;
+    padding-bottom: 6px;
 }
 
 .menu-list :hover {
-    transition: 500ms ease-in;
-    transition-delay: 0.1s;
-    transition-duration: 0.5s;
-    animation-name: MenuAnim;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in-out;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-size: 20px;
+    animation-name: textUndeline;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    color: rgb(243, 227, 227);
 }
 
-@keyframes MenuAnim {
+@keyframes textUndeline {
     0% {
-        background-color: #ebeff3ee;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
     }
     100% {
-        background-color: #1d77b8;
+        text-decoration: underline;
+        text-decoration-thickness: 3.5px;
+        text-underline-offset: 10px;
     }
 }
 
@@ -132,7 +147,7 @@
 
 .seção-apresentação {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 8em;
 }
 
 .seção-apresentação h2 {
@@ -168,7 +183,7 @@
 
 .seção-serviços {
     min-height: fit-content;
-    margin-top: 5em;
+    margin-top: 8em;
 }
 
 .seção-serviços h2 {
@@ -191,6 +206,11 @@
     width: 400px;
     background-color: var(--AlternativeColor);
     overflow: hidden;
+    height: 570px;
+}
+
+.serviço-card a {
+    text-decoration: none;
 }
 
 .serviço-card:hover {
@@ -216,7 +236,7 @@
     padding: 20px;
 }
 
-.card-des h3 a {
+.card-des h3 {
     color: white;
     text-decoration: none;
     font-family: var(--fontHeebo);
@@ -233,7 +253,7 @@
 /* seção especialistas */
 
 .seção-especialistas {
-    margin-top: 5em;
+    margin-top: 8em;
     min-height: fit-content;
     position: relative;
 }
@@ -248,7 +268,6 @@
 .especialista-container {
     display: flex;
     flex-direction: row;
-    /* margin-top: 60px; */
     justify-content: center;
     align-items: center;
     gap: 40px;
@@ -271,8 +290,9 @@
     max-width: 400px;
     text-align: center;
     gap: 12px;
-    padding: 30px;
+    padding: 10px 30px 10px 30px;
     margin-top: 30px;
+    height: 640px;
 }
 
 .esp-card img {
@@ -299,8 +319,8 @@
 /* clínica */
 
 .seção-clínica {
-    min-height: 1000px;
-    margin-top: 5em;
+    min-height: 970px;
+    margin-top: 8em;
     background-color: var(--AlternativeColor);
     display: flex;
     align-items: center;
@@ -315,7 +335,7 @@
     font-size: 32px;
     text-transform: uppercase;
     letter-spacing: 2.3px;
-    margin-bottom: 8px;
+    margin-bottom: 25px;
 }
 
 .carousel {
@@ -352,7 +372,7 @@
     overflow: visible;
 }
 
-.slider-btn::after{
+.slider-btn::after {
     content: "";
     display: inline-block;
     height: 100%;
@@ -362,7 +382,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    transition:all .4s;
+    transition: all 0.4s;
     background-color: white;
 }
 
@@ -381,28 +401,142 @@
     transform: translate(50%, -50%);
 }
 
-/* seção onde estamos? */
-
-.localization-section {
-    min-height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
-
-.localization-section h2 {
-    font-family: var(--fontHeebo);
-    font-size: 2.2em;
-    font-weight: 700;
-    text-align: center;
-    text-transform: capitalize;
-    margin-bottom: 12px;
-}
-
 .path:nth-last-child(3) {
     text-align: center;
     color: white;
     font-size: 17.5px;
+}
+
+/* seção clientes */
+
+.client-section {
+    height: 700px;
+    margin-top: 6em;
+}
+
+.client-init {
+    text-align: center;
+}
+
+.client-init h2 {
+    font-family: var(--fontHeebo);
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.client-init p {
+    font-size: 20px;
+    font-family: var(--fontSintony);
+    margin-top: 30px;
+}
+
+.client-all-container {
+    display: grid;
+    grid-template-columns: 438px 850px;
+    grid-template-rows: auto;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+.clients-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.person-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: linear-gradient(to right, #5bc9eb2f, #5bc9eb33, transparent);
+    gap: 20px;
+    width: 100%;
+    height: 110px;
+    padding-left: 38px;
+    position: relative;
+    border-radius: 15px 0px 0px 15px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    transition: 3s ease;
+    z-index: 1;
+    outline: none;
+}
+
+.person-container::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 100%;
+    background-color: #5bc9eb2f;
+    transition: 1.3s;
+    position: absolute;
+    right: 0;
+    background-blend-mode: lighten;
+    z-index: -1;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.person-container:hover::after {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+}
+
+.person-container:focus::after {
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.person-container:focus span {
+    color: var(--PrimaryColor);
+}
+
+.person-container img {
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+    clip-path: circle();
+}
+
+.person-container h3 {
+    font-family: var(--fontHeebo);
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.person-container span {
+    font-size: 25px;
+    color: #3cbd96;
+    font-weight: 700;
+    margin-left: 40px;
+    position: absolute;
+    right: 45px;
+    z-index: 2;
+}
+
+.person-container:hover span {
+    color: var(--PrimaryColor);
+}
+
+.review-container {
+    background-color: #5bc9eb33;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 0px 21px 21px 0px;
+}
+
+.review-container > .esp-content {
+    transition: 0.4s ease-in-out;
+}
+
+.quote {
+    color: var(--AlternativeColor);
+    font-size: 3em;
 }
