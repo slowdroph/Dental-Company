@@ -9,6 +9,8 @@ BtnServices.addEventListener("click", function () {
     });
 });
 
+// carousel
+
 const slides = document.querySelectorAll(".slider");
 const btnLeft = document.querySelector(".button-arrow-left");
 const btnRight = document.querySelector(".button-arrow-right");
@@ -18,7 +20,7 @@ const maxSlide = slides.length;
 
 const goToSlide = function (slide) {
     slides.forEach(function (e, i) {
-        (e.style.transform = `translateX(${100 * (i - slide)}%)`)
+        e.style.transform = `translateX(${100 * (i - slide)}%)`;
     });
 };
 
@@ -45,9 +47,65 @@ const init = function () {
 };
 init();
 
-const Timer = setInterval(function(){
-    nextSlide()
-},8000)
+const TimerSlide = setInterval(function () {
+    nextSlide();
+}, 8000);
 
 btnLeft.addEventListener("click", prevSlide);
 btnRight.addEventListener("click", nextSlide);
+
+// reveal scroll
+
+const seções = document.querySelectorAll(".section");
+
+const settings = {
+    root: null,
+    threshold: 0,
+};
+
+const func = function (entry) {
+    const [all] = entry;
+
+    if (!all.isIntersecting) return;
+
+    all.target.classList.remove("hidden");
+    observar.unobserve(all.target);
+};
+
+const observar = new IntersectionObserver(func, settings);
+seções.forEach(function (el) {
+    observar.observe(el);
+});
+
+// modal
+
+const TextBox = document.querySelector(".review-container").lastElementChild;
+const PersonsButton = document.querySelectorAll(".person-container");
+const FirstPerson = document.querySelectorAll(".person-container")[0];
+
+const feedbacks = {
+    Gustavo:
+        "Minha experiência na DenteBrilho Odontologia foi incrível! Desde a primeira consulta até o término do tratamento, fui recebido com profissionalismo e atenção excepcionais. A Dra. Juliana Santos, minha especialista em ortodontia, foi extremamente cuidadosa em explicar cada etapa do meu tratamento de alinhamento dental.",
+    Jéssica:
+        "Minha experiência na DenteBrilho Odontologia foi verdadeiramente excepcional. Como paciente da Dra. Larissa, especialista em Endodontia, fui tratada com cuidado e profissionalismo desde o primeiro dia.",
+    Jean: "Minha jornada na DenteBrilho Odontologia foi incrível! Como      paciente do Dr. Marcos, especialista em Clínica Geral, encontrei não apenas um dentista, mas um verdadeiro parceiro em minha jornada odontológica. Desde o primeiro check-up até os procedimentos de restauração, o Dr. Marcos demonstrou um profundo compromisso com a minha saúde bucal. Sua abordagem atenciosa e explicativa me fez sentir confortável e confiante em cada passo do tratamento.",
+};
+
+const Avaliações = Array.from(Object.values(feedbacks));
+
+function OverAll(indice) {
+    TextBox.style.opacity = 0;
+    setTimeout(() => {
+        TextBox.innerHTML = Avaliações[indice];
+        TextBox.style.opacity = 1;
+    }, 400);
+}
+
+for (let i = 0; i < PersonsButton.length; i++) {
+    PersonsButton[i].addEventListener("click", function (e) {
+        const GetPersonAttribute = e.target.getAttribute(`data-indice`);
+        OverAll(GetPersonAttribute);
+    });
+}
+
+FirstPerson.focus();
