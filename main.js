@@ -108,4 +108,68 @@ for (let i = 0; i < PersonsButton.length; i++) {
     });
 }
 
-FirstPerson.focus();
+// hidden menu
+
+const BtnIcon = document.querySelector(".btn-icon");
+const BtnClose = document.querySelector(".btn-close");
+const MenuBox = document.querySelector(".menu-box");
+const overlay = document.querySelector(".overlay");
+const MenuLinks = document.querySelectorAll(".menu-box ul li a");
+
+function AbrirMenu() {
+    MenuBox.classList.add("topHidden");
+    overlay.classList.remove("remove");
+}
+
+function FecharMenu() {
+    MenuBox.classList.remove("topHidden");
+    overlay.classList.add("remove");
+}
+
+BtnIcon.addEventListener("click", AbrirMenu);
+BtnClose.addEventListener("click", FecharMenu);
+overlay.addEventListener("click", FecharMenu);
+MenuLinks.forEach(function (e) {
+    e.addEventListener("click", FecharMenu);
+});
+
+// client slider
+
+const AllClients = document.querySelectorAll(".client-slider");
+const ClientBtnLeft = document.querySelector(".client-btn-left");
+const ClientBtnRight = document.querySelector(".client-btn-right");
+
+const ClientSlide = function (next) {
+    AllClients.forEach(function (e, i) {
+        e.style.transform = `translateX(${100 * (i - next)}%)`;
+    });
+};
+
+let currentSlide = 0;
+const SlideExtend = AllClients.length;
+
+const Próximo = function () {
+    if (currentSlide === SlideExtend - 1) {
+        currentSlide = 0;
+    } else {
+        currentSlide++;
+    }
+    ClientSlide(currentSlide);
+};
+
+const Anterior = function () {
+    if (currentSlide === 0) {
+        currentSlide = SlideExtend - 1;
+    } else {
+        currentSlide--;
+    }
+    ClientSlide(currentSlide);
+};
+
+const começar = function () {
+    ClientSlide(0);
+};
+começar();
+
+ClientBtnRight.addEventListener("click", Próximo);
+ClientBtnLeft.addEventListener("click", Anterior);

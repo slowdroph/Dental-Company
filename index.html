@@ -7,6 +7,7 @@
         <meta name="description" content="Dente Brilho Odontologia é uma clínica dentária dedicada a proporcionar cuidados odontológicos abrangentes e personalizados para toda a família. Localizada em um ambiente acolhedor e moderno, nossa clínica visa criar uma experiência positiva desde o momento em que os pacientes entram pela porta.">
         <meta name="keywords" content="">
         <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="responsive.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>DenteBrilho</title>
     </head>
@@ -17,16 +18,28 @@
         <header>
             <nav class="navbar">
                 <ul class="menu-list">
+                    <li><a href="#">home</a></li>
                     <li><a href="#">serviços</a></li>
                     <li><a href="#">contato</a></li>
                     <li><a href="#">agendar consulta</a></li>
                 </ul>
+                <button class="btn-icon"><i class="fa-solid fa-bars"></i></button>
             </nav>
             <div class="img-container">
                 <h1 class="title-main">
                     <span class="sub-título">DenteBrilho Odontologia</span>
                     <span class="sub-título">Uma clínica que se preocupa com o seu sorriso</span>
                 </h1>
+            </div>
+
+            <div class="menu-box">
+                <button class="btn-icon btn-close"><i class="fa-solid fa-xmark"></i></button>
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">serviços</a></li>
+                    <li><a href="#">contato</a></li>
+                    <li><a href="#">agendamento</a></li>
+                </ul>
             </div>
         </header>
 
@@ -165,11 +178,45 @@
                     <p class="esp-content">Minha experiência na DenteBrilho Odontologia foi incrível! Desde a primeira consulta até o término do tratamento, fui recebido com profissionalismo e atenção excepcionais. A Dra. Bárbara, minha especialista em ortodontia, foi extremamente cuidadosa em explicar cada etapa do meu tratamento de alinhamento dental."</p>
                 </div>
             </div>
+
+            <div class="client-carousel-container">
+                <div class="client-slider">
+                    <div class="test">
+                        <p class="esp-content">Minha experiência na DenteBrilho Odontologia foi incrível! Desde a primeira consulta até o término do tratamento, fui recebido com profissionalismo e atenção excepcionais. A Dra. Juliana Santos, minha especialista em ortodontia, foi extremamente cuidadosa em explicar cada etapa do meu tratamento de alinhamento dental.</p>
+                        <div class="client-name">
+                            <img src="imagens/gustavo.jfif" alt="cliente">
+                            <h3>Gustavo Borges</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="client-slider">
+                    <div class="test">
+                        <p class="esp-content">Minha experiência na DenteBrilho Odontologia foi verdadeiramente excepcional. Como paciente da Dra. Larissa, especialista em Endodontia, fui tratada com cuidado e profissionalismo desde o primeiro dia.</p>
+                        <div class="client-name">
+                            <img src="imagens/jessica.jfif" alt="cliente">
+                            <h3>Jéssica Medeiros</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="client-slider">
+                    <div class="test">
+                        <p class="esp-content">Minha experiência na DenteBrilho Odontologia foi verdadeiramente excepcional. Como paciente da Dra. Larissa, especialista em Endodontia, fui tratada com cuidado e profissionalismo desde o primeiro dia.</p>
+                        <div class="client-name">
+                            <img src="imagens/joao.jfif" alt="cliente">
+                            <h3>Jean Paulo</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-btn client-btn-left">←</button>
+            <button class="slider-btn client-btn-right">→</button>
         </section>
 
         <footer class="path">
             © Copyright 2023
         </footer>
+
+        <span class="overlay remove"></span>
         <script  src="main.js"></script>
     </body>
 </html>
