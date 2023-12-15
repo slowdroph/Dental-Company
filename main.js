@@ -1,14 +1,5 @@
 "use strict";
 
-const BtnServices = document.querySelector(".menu-list a");
-const SectionServices = document.querySelector(".seção-serviços");
-
-BtnServices.addEventListener("click", function () {
-    SectionServices.scrollIntoView({
-        behavior: "smooth",
-    });
-});
-
 // carousel
 
 const slides = document.querySelectorAll(".slider");
